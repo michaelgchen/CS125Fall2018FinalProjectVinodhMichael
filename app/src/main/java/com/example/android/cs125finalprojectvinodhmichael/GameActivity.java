@@ -10,15 +10,15 @@ import android.view.WindowManager;
 
 public class GameActivity extends AppCompatActivity {
 
+    private GameView gameView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-       // setContentView(new GameView(this));
-        setContentView(R.layout.activity_game);
-
-
+        gameView = new GameView(this);
+        setContentView(gameView);
+       // setContentView(R.layout.activity_game);
     }
 
 }
