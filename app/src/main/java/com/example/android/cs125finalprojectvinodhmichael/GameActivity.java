@@ -66,7 +66,7 @@ public class GameActivity extends AppCompatActivity {
         f = findViewById(R.id.f);
         //add other characters
         scoreLabel = findViewById(R.id.scoreLabel);
-        highScoreLabel = findViewById(R.id.highScoreLabel);
+        //highScoreLabel = findViewById(R.id.highScoreLabel);
 
         //add left version of character
         imageCharacterLeft = getResources().getDrawable(R.drawable.student);

@@ -9,17 +9,7 @@ android:orientation="vertical"
 android:background="@android:color/white">
 
 <!-- can add background -->
-<TextView
-    android:id="@+id/scoreLabel"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Score : 0"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    android:paddingVertical="14dp"
-    android:layout_marginBottom="20dp"
-    android:gravity="center"
-    android:background="@android:color/white"/>
+
 
 
 
@@ -29,6 +19,18 @@ android:background="@android:color/white">
     android:layout_height="580dp"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/gamebg">
+
+    <TextView
+        android:id="@+id/scoreLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Score : 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingVertical="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="left"
+        android:background="@null"/>
 
     <ImageView
         android:id="@+id/character"
@@ -65,26 +67,14 @@ android:background="@android:color/white">
             android:text = "A Grades Journey"
             android:textSize="24sp"
             android:layout_marginTop = "20dp"/>
-        <TextView
-            android:id="@+id/highScoreLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="High Score: 300"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="80dp"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Start"
             android:layout_marginTop = "60dp"
             android:onClick="startGame"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quit"
-            android:layout_marginTop = "20dp"
-            android:onClick="quitGame"/>
+
 
 
 
