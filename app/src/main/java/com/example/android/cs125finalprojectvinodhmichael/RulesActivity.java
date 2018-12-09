@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.example.android.cs125finalprojectvinodhmichael.R;
 
 public class RulesActivity extends AppCompatActivity {
 

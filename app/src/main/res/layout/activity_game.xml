@@ -1,11 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity"
+android:orientation="vertical"
+android:background="@android:color/white">
+
+<!-- can add background -->
+<TextView
+    android:id="@+id/scoreLabel"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gameplay"
-    tools:context=".GameActivity">
+    android:layout_height="wrap_content"
+    android:text="Score : 0"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:paddingVertical="14dp"
+    android:layout_marginBottom="20dp"
+    android:gravity="center"
+    android:background="@android:color/white"/>
 
 
-</RelativeLayout>
+
+<FrameLayout
+    android:id="@+id/gameFrame"
+    android:layout_width="380dp"
+    android:layout_height="580dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/gamebg">
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/student"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/a"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src = "@drawable/a"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/f"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/f"
+        android:visibility="invisible"/>
+    <!--add all letters -->
+    <LinearLayout
+        android:id="@+id/startLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "A Grades Journey"
+            android:textSize="24sp"
+            android:layout_marginTop = "20dp"/>
+        <TextView
+            android:id="@+id/highScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Score: 300"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="80dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            android:layout_marginTop = "60dp"
+            android:onClick="startGame"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quit"
+            android:layout_marginTop = "20dp"
+            android:onClick="quitGame"/>
+
+
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
+<!-- change box Id -->
+
+
+</LinearLayout>
