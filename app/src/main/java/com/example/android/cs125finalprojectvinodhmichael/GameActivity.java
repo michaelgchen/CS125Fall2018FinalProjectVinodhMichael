@@ -79,15 +79,31 @@ public class GameActivity extends AppCompatActivity {
         // f
         fY += 12;
 
+        //a
+        aY += 12;
+
+        //f Center
         float fCenterX = fX + f.getWidth()/2;
         float fCenterY = fY + f.getHeight() / 2;
 
+        // A Center
+        float aCenterX = aX + a.getWidth()/2;
+        float aCenterY = aY + a.getHeight()/2;
+
+        // F Hit Check
         if (hitCheck(fCenterX, fCenterY)) {
             fY = frameHeight + 100;
             score -=10;
 
         }
 
+        //A Hit Check
+        if (hitCheck(aCenterX, aCenterY)) {
+            aY = frameHeight + 100;
+            score += 10;
+        }
+
+        // f spwan
         if (fY > frameHeight) {
             fY = -100;
             fX = (float) Math.floor(Math.random() * (frameWidth - f.getWidth()));
@@ -95,7 +111,13 @@ public class GameActivity extends AppCompatActivity {
         f.setX(fX);
         f.setY(fY);
 
-
+        // a spawn
+        if (aY > frameHeight) {
+           aY = -100;
+           aX = (float) Math.floor(Math.random() * (frameWidth - a.getWidth()));
+        }
+        a.setX(aX);
+        a.setY(aY);
         //Move Character
         if (action_flg) {
             //Touching
