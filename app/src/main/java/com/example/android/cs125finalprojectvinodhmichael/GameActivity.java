@@ -29,6 +29,13 @@ public class GameActivity extends AppCompatActivity {
     //Image
     private ImageView character, a, f;
     private Drawable imageCharacterRight, imageCharacterLeft;
+    private ImageView filledHeart;
+    private ImageView unfilledHeart;
+
+    //Life
+    private ImageView life[] = new ImageView[2];
+
+
 
 
     //Size
