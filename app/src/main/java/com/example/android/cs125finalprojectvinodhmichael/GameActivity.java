@@ -160,8 +160,8 @@ public class GameActivity extends AppCompatActivity {
         //D Hit Check
         if (hitCheck(dCenterX, dCenterY)) {
             dY = frameHeight + 100;
-            if(score >= 20 ) {
-                score -= 20;
+            if(score >= 30 ) {
+                score -= 30;
             }
         }
 
@@ -174,7 +174,7 @@ public class GameActivity extends AppCompatActivity {
 
         }
 
-        // f spwan
+        // f spawn
         if (fY > frameHeight) {
             fY = -100;
             fX = (float) Math.floor(Math.random() * (frameWidth - f.getWidth()));
