@@ -160,8 +160,8 @@ public class GameActivity extends AppCompatActivity {
         //D Hit Check
         if (hitCheck(dCenterX, dCenterY)) {
             dY = frameHeight + 100;
-            if(score >= 30 ) {
-                score -= 30;
+            if(score >= 40 ) {
+                score -= 40;
             }
         }
 
