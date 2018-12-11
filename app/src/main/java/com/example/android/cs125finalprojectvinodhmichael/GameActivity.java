@@ -64,6 +64,8 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
 
 
@@ -94,19 +96,19 @@ public class GameActivity extends AppCompatActivity {
     public void changePos() {
 
         // f
-        fY += 12;
+        fY += 30;
 
         //a
-        aY += 12;
+        aY += 10;
 
         //b
-        bY += 12;
+        bY += 15;
 
         //c
-        cY += 12;
+        cY += 20;
 
         //d
-        dY += 12;
+        dY += 25;
 
 
         //f Center
@@ -131,15 +133,6 @@ public class GameActivity extends AppCompatActivity {
         float dCenterY = dY + d.getHeight()/2;
 
 
-        // F Hit Check
-        if (hitCheck(fCenterX, fCenterY)) {
-            fY = frameHeight + 100;
-            //score -=10;
-            lifeCount--;
-            removeHeart(lifeCount);
-
-        }
-
         //A Hit Check
         if (hitCheck(aCenterX, aCenterY)) {
             aY = frameHeight + 100;
@@ -155,7 +148,7 @@ public class GameActivity extends AppCompatActivity {
         //B Hit Check
         if (hitCheck(bCenterX, bCenterY)) {
             bY = frameHeight + 100;
-            score += 10;
+            score += 30;
         }
 
         //C Hit Check
@@ -167,7 +160,18 @@ public class GameActivity extends AppCompatActivity {
         //D Hit Check
         if (hitCheck(dCenterX, dCenterY)) {
             dY = frameHeight + 100;
-            score += 10;
+            if(score >= 20 ) {
+                score -= 20;
+            }
+        }
+
+        // F Hit Check
+        if (hitCheck(fCenterX, fCenterY)) {
+            fY = frameHeight + 100;
+            //score -=10;
+            lifeCount--;
+            removeHeart(lifeCount);
+
         }
 
         // f spwan
@@ -244,7 +248,6 @@ public class GameActivity extends AppCompatActivity {
             lifeTwo.setVisibility(View.INVISIBLE);
         } else if (numberOfLives == 0) {
             lifeThree.setVisibility(View.INVISIBLE);
-        } else {
             finish();
         }
     }
