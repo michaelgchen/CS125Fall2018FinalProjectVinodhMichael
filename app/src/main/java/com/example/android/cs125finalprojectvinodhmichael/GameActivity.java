@@ -17,7 +17,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
