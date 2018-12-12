@@ -33,17 +33,18 @@
             android:label="@string/title_activity_stats"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.android.cs125finalprojectvinodhmichael.GameActivity"
+            android:name=".GameActivity"
             android:label="@string/title_activity_game"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.android.cs125finalprojectvinodhmichael.RulesActivity"
+            android:name=".RulesActivity"
             android:label="@string/title_activity_rules"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.android.cs125finalprojectvinodhmichael.StatsActivity"
+            android:name=".StatsActivity"
             android:label="@string/title_activity_stats"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".result" />
     </application>
 
 </manifest>

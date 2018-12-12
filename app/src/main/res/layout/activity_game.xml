@@ -4,132 +4,165 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".MainActivity"
+tools:context=".GameActivity"
 android:orientation="vertical"
 android:background="@android:color/white">
 
 <!-- can add background -->
 
 
-
-
-<FrameLayout
-    android:id="@+id/gameFrame"
-    android:layout_width="380dp"
-    android:layout_height="580dp"
-    android:layout_gravity="center_horizontal"
-    android:background="@drawable/gamebg">
-
-    <TextView
-        android:id="@+id/scoreLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:background="@null"
-        android:gravity="left"
-        android:text="Score : 0"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/character"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="bottom"
-        android:src="@drawable/student"
-        android:visibility="invisible" />
-    <ImageView
-        android:id="@+id/a"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src = "@drawable/a"
-        android:visibility="invisible"/>
-
-    <ImageView
-        android:id="@+id/life1"
-
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="top"
-        android:layout_marginLeft="320dip"
-        android:src="@drawable/hearts"
-        android:visibility="visible" />
-    <ImageView
-        android:id="@+id/life2"
-
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="top"
-        android:layout_marginLeft="270dip"
-        android:src="@drawable/hearts"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/life3"
-
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="top"
-        android:layout_marginLeft="220dip"
-        android:src="@drawable/hearts"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/b"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src = "@drawable/b"
-        android:visibility="invisible"/>
-    <ImageView
-        android:id="@+id/c"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src = "@drawable/c"
-        android:visibility="invisible"/>
-    <ImageView
-        android:id="@+id/d"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src = "@drawable/d"
-        android:visibility="invisible"/>
-    <ImageView
-        android:id="@+id/f"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/f"
-        android:visibility="invisible" />
-    <!--add all letters -->
-    <LinearLayout
-        android:id="@+id/startLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_gravity="center">
+    <FrameLayout
+        android:id="@+id/gameFrame"
+        android:layout_width="390dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/gamebg">
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/scoreLabel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text = "A Grades Journey"
-            android:textSize="24sp"
-            android:layout_marginTop = "20dp"/>
+            android:layout_gravity="clip_vertical"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:text="Score:"
+            android:textSize="18sp"
 
-        <Button
-            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id = "@+id/highScoreLabel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Start"
-            android:layout_marginTop = "60dp"
-            android:onClick="startGame"/>
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="clip_vertical"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:text = "High Score:"
+            android:visibility="visible"
+            />
+
+
+        <ImageView
+            android:id="@+id/character"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/student"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/a"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/a"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/life1"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="320dp"
+            android:src="@drawable/hearts"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/life2"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="270dp"
+            android:src="@drawable/hearts"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/life3"
+
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="220dp"
+            android:src="@drawable/hearts"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/b"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/b"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/c"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/c"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/d"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/d"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/f"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/f"
+            android:visibility="invisible" />
+        <!--add all letters -->
+        <LinearLayout
+            android:id="@+id/startLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/bosk"
+                android:text="The Grades Journey"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="80dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/bosk"
+                android:textSize="50dp"
+                android:onClick="startGame"
+                android:text="Start" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/bosk"
+                android:layout_marginTop="70dp"
+                android:textSize="50dp"
+                android:onClick="quit"
+                android:text="quit" />
 
 
 
+        </LinearLayout>
 
 
-    </LinearLayout>
-
-
-</FrameLayout>
+    </FrameLayout>
 <!-- change box Id -->
 
 

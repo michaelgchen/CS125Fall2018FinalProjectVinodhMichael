@@ -7,5 +7,38 @@
     android:background="@drawable/rulesbg"
     tools:context=".RulesActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/bosk"
+        android:text="How to play: Tap and hold to make the student move to the right and release to make it go to the left.
+\n
+\n
+You have 3 lives!
+\n
+\n
+Catch:
+\n
+\n
+A: Gives a life or 50 points if you already have 3 lives.
+\n
+\n
+B: Gives 30 points
+\n
+\n
+C: Gives 10 points
+\n
+\n
+Avoid:
+\n
+\n
+D: Takes 35 points
+\n
+\n
+F: Takes a life
+"
+        android:textSize="20dp" />
 
 </RelativeLayout>

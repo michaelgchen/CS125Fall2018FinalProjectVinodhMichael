@@ -1,5 +1,8 @@
 package com.example.android.cs125finalprojectvinodhmichael;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -31,6 +35,7 @@ public class GameActivity extends AppCompatActivity {
     private ImageView character, a, f, b, c, d;
     private Drawable imageCharacterRight, imageCharacterLeft;
     private ImageView lifeOne, lifeTwo, lifeThree;
+    private SharedPreferences settings;
 
 
 
@@ -80,7 +85,13 @@ public class GameActivity extends AppCompatActivity {
         f = findViewById(R.id.f);
         //add other characters
         scoreLabel = findViewById(R.id.scoreLabel);
-        //highScoreLabel = findViewById(R.id.highScoreLabel);
+        highScoreLabel = findViewById(R.id.highScoreLabel);
+
+
+        //HighScore
+        settings = getSharedPreferences("GAME_DATA",Context.MODE_PRIVATE);
+        highScore = settings.getInt("HIGH_SCORE", 0);
+        highScoreLabel.setText("High Score: " + highScore);
 
         //Lives
         lifeOne = findViewById(R.id.life1);
@@ -92,6 +103,36 @@ public class GameActivity extends AppCompatActivity {
         imageCharacterRight = getResources().getDrawable(R.drawable.student);
 
     }
+
+
+    public void gameOver() {
+        timer.cancel();
+        timer = null;
+        start_flg = false;
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        startLayout.setVisibility(View.VISIBLE);
+        character.setVisibility(View.INVISIBLE);
+        a.setVisibility(View.INVISIBLE);
+        b.setVisibility(View.INVISIBLE);
+        c.setVisibility(View.INVISIBLE);
+        d.setVisibility(View.INVISIBLE);
+        f.setVisibility(View.INVISIBLE);
+        if (score > highScore) {
+            highScoreLabel.setText("High Score: " + score);
+
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putInt("HIGH_SCORE", score);
+            editor.commit();
+
+
+        }
+    }
+
 
     public void changePos() {
 
@@ -160,8 +201,8 @@ public class GameActivity extends AppCompatActivity {
         //D Hit Check
         if (hitCheck(dCenterX, dCenterY)) {
             dY = frameHeight + 100;
-            if(score >= 40 ) {
-                score -= 40;
+            if(score >= 35) {
+                score -= 35;
             }
         }
 
@@ -248,7 +289,7 @@ public class GameActivity extends AppCompatActivity {
             lifeTwo.setVisibility(View.INVISIBLE);
         } else if (numberOfLives == 0) {
             lifeThree.setVisibility(View.INVISIBLE);
-            finish();
+            gameOver();
         }
     }
 
@@ -287,6 +328,10 @@ public class GameActivity extends AppCompatActivity {
         start_flg = true;
         startLayout.setVisibility(View.INVISIBLE);
 
+        lifeOne.setVisibility(View.VISIBLE);
+        lifeTwo.setVisibility(View.VISIBLE);
+        lifeThree.setVisibility(View.VISIBLE);
+        lifeCount = 3;
         if (frameHeight == 0) {
             frameHeight = gameFrame.getHeight();
             frameWidth = gameFrame.getWidth();
@@ -342,8 +387,9 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
-    public void quitGame(View view) {
-
+    public void quit(View view) {
+        Intent intentStart = new Intent(this, MainActivity.class);
+        startActivity(intentStart);
     }
 }
 
