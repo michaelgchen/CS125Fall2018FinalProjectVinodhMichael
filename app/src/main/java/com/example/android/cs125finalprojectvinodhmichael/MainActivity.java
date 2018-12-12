@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentStart);
     }
 
-    public void statsGame(View view) {
-        Intent intentStart = new Intent(this, StatsActivity.class);
-        startActivity(intentStart);
-    }
+    //public void statsGame(View view) {
+       // Intent intentStart = new Intent(this, StatsActivity.class);
+       // startActivity(intentStart);
+    //}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

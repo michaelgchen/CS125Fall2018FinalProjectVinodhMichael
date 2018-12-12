@@ -22,7 +22,7 @@
         android:padding="1dp"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/play" />
-    <!---Stats button-->
+    <!---Stats button
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="120dp"
@@ -35,7 +35,7 @@
         android:onClick="statsGame"
         android:padding="1dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/stats" />
+        app:srcCompat="@drawable/stats" /> -->
 
     <!---Rules button-->
     <ImageButton
